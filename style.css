@@ -18,9 +18,17 @@ h2 {
     margin: 20px;
 }
 
+h3 {
+    color:rgb(234, 151, 187);
+    margin-left: 20%;
+}
+
 p {
     color:darkslategray;
     padding-left: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    line-height: 130%;
 }
 
 footer {
@@ -29,11 +37,15 @@ footer {
     color: rgb(125, 125, 125);
     background-color: rgb(0, 20, 29);
     padding-left: 20px;
+    padding-top: 8px;
+    border-top: solid;
+    border-color: rgb(0, 30, 44);
 }
 
 button {
     border-style: outset;
     border-color: rgb(255, 0, 0);
+    border-width: 2px;
     outline: 100;
     display: inline-block;
     padding: 10px 25px;
@@ -48,6 +60,29 @@ button:hover {
     border-style: inset;
     color: rgb(234, 151, 187);
     font-weight: 1000;
+}
+
+ul {
+    color:darkslategray;
+    padding-left: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+    line-height: 130%;
+    list-style-type:square;
+}
+
+.text-link:link {
+    color:rgb(125, 27, 27);
+    text-decoration: none;
+}
+
+.text-link:visited {
+    color:rgb(233, 111, 63);
+}
+
+.text-link:hover {
+    color: rgb(197, 82, 51);
+    font-weight: bolder;
 }
 
 .icon {
@@ -163,6 +198,24 @@ button:hover {
     background-color:rgb(0, 7, 9);
     padding: 10px;
     text-align: left;
+}
+
+.inline-image {
+    max-width: 35%;
+    position: relative;
+    margin: auto;
+}
+
+.right{
+    float: right;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.left{
+    float: left;
+    margin-left: 18%;
+    margin-right: 5%;
 }
 
 #navbar {
