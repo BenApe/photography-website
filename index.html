@@ -8,11 +8,32 @@
         <meta name="description" content="Benjamin Perez Website Homepage">
         <meta name="author" content="Benjamin Perez">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .title-word {
+                animation: blink 1.7s steps(2) infinite;
+            }
+
+            .blinker {
+                --color-1: rgb(234, 151, 187);
+                --color-2: rgba(0, 0, 0, 0);
+            }
+
+            @keyframes blink {
+                0% {color: var(--color-1)}
+                49% {color: var(--color-1)}
+                50% {color: var(--color-2)}
+                100% {color: var(--color-2)}
+            }
+        </style>
     </head>
 
     <div class="hero-image">
         <div class="hero-text">
-            <h1>b.prez_homepage</h1>
+            <div>
+                <h1>
+                    <span>> b.prez_homepage</span><span class="title-word blinker">_</span>
+                </h1>
+            </div>
             <a href="portfolio.html"><button>portfolio</button></a>
             <a href="aboutme.html"><button>about_me</button></a>
             <a href="contact.html"><button>contact</button></a>

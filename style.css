@@ -27,7 +27,7 @@ p {
     color:darkslategray;
     padding-left: 20px;
     margin-left: 5px;
-    margin-right: 0;
+    margin-right: 5px;
     line-height: 130%;
 }
 
@@ -242,6 +242,26 @@ ul {
 #navbar button.activepage {
     border-style: inset;
     color: rgb(234, 151, 187);
+    font-weight: 1000;
+}
+
+#navbar button.subpage {
+    background-color: rgb(21, 14, 14);
+    border-color: rgb(21, 14, 14);
+    color: rgb(125, 125, 125);
+}
+
+#navbar button.subpage-marker {
+    padding: 10px 10px;
+}
+
+#navbar button.subpage-marker:hover {
+    border-style: outset;
+    font-weight: normal;
+}
+
+#navbar button.subpage-marker:hover, button.activepage {
+    border-style: inset;
     font-weight: 1000;
 }
 
