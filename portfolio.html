@@ -3,6 +3,7 @@
     <head>
         <title>b.prez_portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="gallery-style.css">
         <link rel="icon" type="image/x-icon" href="icons/camera.svg">
         <meta charset="UTF-8">
         <meta name="description" content="Benjamin Perez Website Portfolio">
@@ -19,8 +20,15 @@
             <a href="aboutme.html"><button>about_me</button></a>
             <a href="contact.html"><button>contact</button></a>
         </div>
-        
-        <p>/!\ Under Construction /!\</p>
+
+        <h2>> gallery</h2>
+
+        <div class="row">
+            <div class="column" id="col0"></div>
+            <div class="column" id="col1"></div>
+            <div class="column" id="col2"></div>
+            <div class="column" id="col3"></div>
+        </div>
 
         <footer>
             [All images © Benjamin Perez]
@@ -37,5 +45,51 @@
                 [<img class="icon" src="icons/linkedin.svg" alt="LinkedIn icon">]
             </a>
         </footer>
+
+        <script>
+            const imgs = new Map([
+                [0, ["bridge_work.JPG", "_bridge_work", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [1, ["fence.JPG", "_fence", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [2, ["flower.JPG", "_flower", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [3, ["high_voltage.JPG", "_high_voltage", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [4, ["speedlimit.JPG", "_speed_limit", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [5, ["jellyfish1.JPG", "_jellyfish1", "<p>> SONY_MVC_FD100<br>> 11_10_2026</p>"]],
+                [6, ["jellyfish2.JPG", "_jellyfish2", "<p>> SONY_MVC_FD100<br>> 11_10_2026</p>"]],
+                [7, ["maple.JPG", "_maple", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [8, ["neighborhood.JPG", "_neighborhood", "<p>> SONY_MVC_FD100<br>> 6_21_2026</p>"]],
+                [9, ["no_parking.JPG", "_no_parking", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [10, ["no_tresspassing.JPG", "_no_tresspassing", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [11, ["notice.JPG", "_notice", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [12, ["road_signs.JPG", "_road_signs", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [13, ["smear.JPG", "_smear", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
+                [14, ["surveillance.JPG", "_surveillance", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]]
+            ]);
+
+            imgs.forEach (function(value, key) {
+                let fn = value[0];
+                let name = value[1];
+                let desc = value[2];
+                let col = key % 4;
+                document.getElementById("col"+col).innerHTML += '<div class="container" onclick="openModal(' + "'modal" + key + "', '" + name + "'" + ')"><img src="gallery/' + fn + '" style="width: 100%;"><div class="overlay"><h3>' + name + '</h3>' + desc + '</div></div>'
+                document.body.innerHTML += '<div id="modal' + key + '" class="modal"><span class="close" onclick="closeModal(' + "'modal" + key + "'" + ')">&times;</span><img src="gallery/' + fn + '" style="width: 100%;" class="modal-content"><div class="caption"></div></div>'
+            })
+
+            function openModal(modalId, caption) {
+                let modal = document.getElementById(modalId);
+                modal.style.display = "flex";
+                modal.classList.add("show");
+                let message = modal.querySelector(".caption");
+                message.innerText = caption;
+            }
+
+            function closeModal(modalId) {
+                let modal = document.getElementById(modalId);
+                modal.classList.remove("show");
+                setTimeout(function () {
+                    modal.style.display = "none";
+                    modal.querySelector(".caption").innerText = "";
+                }, 300);
+            }
+        </script>
     </body>
 </html>
