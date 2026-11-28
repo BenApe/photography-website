@@ -50,7 +50,9 @@
             </a>
         </footer>
 
+        <script src="script.js"></script>
         <script>
+            // [number, [file name, work name, description]]
             const imgs = new Map([
                 [0, ["bridge_work.JPG", "_bridge_work", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
                 [1, ["fence.JPG", "_fence", "<p>> SONY_MVC_FD100<br>> 11_11_2026</p>"]],
@@ -73,31 +75,7 @@
                 [18, ["coral_reef.JPG", "_coral_reef", "<p>> OIEX_KIDS_DIGITAL_CAMERA<br>> 11_07_2025"]]
             ]);
 
-            imgs.forEach (function(value, key) {
-                let fn = value[0];
-                let name = value[1];
-                let desc = value[2];
-                let col = key % 4;
-                document.getElementById("col"+col).innerHTML += '<div class="container" onclick="openModal(' + "'modal" + key + "', '" + name + "'" + ')"><img src="gallery/' + fn + '" style="width: 100%;"><div class="overlay"><h3>' + name + '</h3>' + desc + '</div></div>'
-                document.body.innerHTML += '<div id="modal' + key + '" class="modal"><span class="close" onclick="closeModal(' + "'modal" + key + "'" + ')">&times;</span><img src="gallery/' + fn + '" style="width: 100%;" class="modal-content"><div class="caption"></div></div>'
-            })
-
-            function openModal(modalId, caption) {
-                let modal = document.getElementById(modalId);
-                modal.style.display = "flex";
-                modal.classList.add("show");
-                let message = modal.querySelector(".caption");
-                message.innerText = caption;
-            }
-
-            function closeModal(modalId) {
-                let modal = document.getElementById(modalId);
-                modal.classList.remove("show");
-                setTimeout(function () {
-                    modal.style.display = "none";
-                    modal.querySelector(".caption").innerText = "";
-                }, 300);
-            }
+            createGallery(imgs, "gallery")
         </script>
     </body>
 </html>

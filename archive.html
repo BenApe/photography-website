@@ -27,7 +27,13 @@
 
         <h3>> About the archive</h3>
         <p>This page is a gallery of photos I took as part of a digital photography course I took in sophomore year of highschool.</p>
-        <p>/!\ Under Construction /!\</p>
+        
+        <div class="row">
+            <div class="column" id="col0"></div>
+            <div class="column" id="col1"></div>
+            <div class="column" id="col2"></div>
+            <div class="column" id="col3"></div>
+        </div>
 
         <footer>
             [All images © Benjamin Perez]
@@ -44,5 +50,31 @@
                 [<img class="icon" src="icons/linkedin.svg" alt="LinkedIn icon">]
             </a>
         </footer>
+
+        <script src="script.js"></script>
+        <script>
+            // [number, [file name, work name, description]]
+            const imgs = new Map([
+                [0, ["blue_building.jpg", "_blue_building", "<p>> NIKON<br>> 12_02_2021</p>"]],
+                [1, ["bubble.jpg", "_bubble", "<p>> NIKON<br>> 10_11_2021</p>"]],
+                [2, ["bursting_trees.jpg", "_bursting_trees", "<p>> NIKON<br>> 12_09_2021</p>"]],
+                [3, ["flower_building.jpg", "_flower_building", "<p>> NIKON<br>> 12_02_2021</p>"]],
+                [4, ["flower_orb.jpg", "_flower_orb", "<p>> NIKON<br>> 10_14_2021</p>"]],
+                [5, ["glass_orb.jpg", "_glass_orb", "<p>> NIKON<br>> 10_14_2021</p>"]],
+                [6, ["gold_clock.jpg", "_gold_clock", "<p>> NIKON<br>> 09_09_2021</p>"]],
+                [7, ["leafes.jpg", "_leafes", "<p>> NIKON<br>> 11_02_2021</p>"]],
+                [8, ["mercedes_benz.jpg", "_mercedes_benz", "<p>> NIKON<br>> 11_02_2021</p>"]],
+                [9, ["new_skies.jpg", "_new_skies", "<p>> NIKON<br>> 12_07_2021</p>"]],
+                [10, ["oil_on_water_1.jpg", "_oil_on_water1", "<p>> NIKON<br>> 10_12_2021</p>"]],
+                [11, ["oil_on_water_2.jpg", "_oil_on_water2", "<p>> NIKON<br>> 10_12_2021</p>"]],
+                [12, ["oil_on_water_3.jpg", "_oil_on_water3", "<p>> NIKON<br>> 10_12_2021</p>"]],
+                [13, ["origami.jpg", "_origami", "<p>> NIKON<br>> 09_14_2021</p>"]],
+                [14, ["pictures_of_importance.jpg", "_pictures_of_importance", "<p>> NIKON<br>> 09_30_2021</p>"]],
+                [15, ["pixel_leaf.jpg", "_pixel_leaf", "<p>> NIKON<br>> 10_28_2021</p>"]],
+                [16, ["tomas.jpg", "_tomas", "<p>> NIKON<br>> 10_12_2021</p>"]]
+            ])
+
+            createGallery(imgs, "archive")
+        </script>
     </body>
 </html>
